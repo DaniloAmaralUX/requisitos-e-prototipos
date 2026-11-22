@@ -5,14 +5,14 @@
     {
       tab: document.getElementById("tab-comando"),
       text: command,
-      hint: "Execute na pasta do projeto com acesso ao repositório privado.",
+      hint: "Execute na pasta do projeto.",
       copyLabel: "Copiar comando de instalação",
       prefix: "$",
     },
     {
       tab: document.getElementById("tab-prompt"),
       text: "Instale a skill Requisitos e Protótipos neste projeto usando o comando " + command,
-      hint: "Envie ao agente no chat da IDE com o projeto aberto e acesso ao repositório privado.",
+      hint: "Envie ao agente no chat da IDE com o projeto aberto.",
       copyLabel: "Copiar prompt de instalação",
       prefix: "›",
     },
