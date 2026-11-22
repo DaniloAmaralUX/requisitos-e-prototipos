@@ -61,6 +61,16 @@
     parent.append(text.slice(start));
   }
 
+  function tableCells(line) {
+    const values = [""];
+    const parts = line.slice(1, -1).split(/(`[^`]*`|\|)/);
+    for (const part of parts) {
+      if (part === "|") values.push("");
+      else values[values.length - 1] += part;
+    }
+    return values;
+  }
+
   function table(rows, path, article) {
     const wrapper = document.createElement("div");
     wrapper.className = "reader-table";
@@ -70,7 +80,7 @@
     rows.forEach((line, index) => {
       if (index === 1 && /^\|[\s:|-]+\|$/.test(line)) return;
       const row = (index === 0 ? head : body).insertRow();
-      for (const value of line.slice(1, -1).split("|")) {
+      for (const value of tableCells(line)) {
         const cell = document.createElement(index === 0 ? "th" : "td");
         if (index === 0) cell.scope = "col";
         inline(cell, value.trim(), path, article);
