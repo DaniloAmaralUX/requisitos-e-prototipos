@@ -5,7 +5,7 @@
     {
       tab: document.getElementById("tab-comando"),
       text: command,
-      hint: "Execute na pasta do projeto.",
+      hint: "Execute na pasta do projeto e selecione o agente da sua IDE.",
       copyLabel: "Copiar comando de instalação",
       prefix: "$",
     },
