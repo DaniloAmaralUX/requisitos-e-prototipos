@@ -16,6 +16,13 @@
       copyLabel: "Copiar prompt de instalação",
       prefix: "›",
     },
+    {
+      tab: document.getElementById("tab-exemplo"),
+      text: "Use a skill requisitos-e-prototipos. Quero um protótipo para pedir almoço na empresa e escolher o horário de retirada.",
+      hint: "Depois de instalar, abra uma nova conversa na IDE e cole este pedido.",
+      copyLabel: "Copiar exemplo para a IDE",
+      prefix: "›",
+    },
   ];
   const copyButton = document.getElementById("copy-install");
   const copyIcon = copyButton.querySelector("use");
@@ -53,7 +60,12 @@
   options.forEach((option, index) => {
     option.tab.addEventListener("click", () => selectOption(option));
     option.tab.addEventListener("keydown", event => {
-      const keys = { ArrowRight: 1 - index, ArrowLeft: 1 - index, Home: 0, End: 1 };
+      const keys = {
+        ArrowRight: (index + 1) % options.length,
+        ArrowLeft: (index + options.length - 1) % options.length,
+        Home: 0,
+        End: options.length - 1,
+      };
       if (!Object.hasOwn(keys, event.key)) return;
       event.preventDefault();
       const next = options[keys[event.key]];
