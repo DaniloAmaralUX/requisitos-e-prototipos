@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Requisitos e Protótipos · Pitang Skills</title>
+  <meta name="description" content="Transforme uma ideia ou um documento em um protótipo navegável. Experimente o Prototype Viewer e instale a skill da Pitang no seu projeto.">
+  <link rel="icon" href="visual/pitang.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="pagina.css">
+  <script defer src="arquivos/skill.js"></script>
+  <script defer src="leitor.js"></script>
+  <script defer src="pagina.js"></script>
+</head>
+<body id="inicio">
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6m9 0h7"/></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18m-14-2.5h.01m3 0h.01"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10Zm0 0v7h7M8 14h7m-7 3h5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 18 6M7 6h11v11"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  </svg>
+  <a class="skip" href="#principal">Pular para o conteúdo</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#inicio" class="brand" aria-label="Pitang Skills, início">
+        <img src="visual/pitang.svg" width="137" height="39" alt="Pitang">
+        <span aria-hidden="true">/</span><b>Skills</b>
+      </a>
+      <nav aria-label="Seções da página">
+        <a href="#instalacao">Instalação</a>
+        <a href="#viewer">Viewer</a>
+        <a href="#documentacao">SKILL.md</a>
+      </nav>
+    </div>
+  </header>
+  <main id="principal" class="wrap">
+    <div class="path" aria-label="Caminho da skill">
+      <span>skills</span><i>/</i><span>pitang</span><i>/</i><span>requisitos-e-prototipos</span>
+    </div>
+    <header class="intro">
+      <h1>Requisitos e Protótipos</h1>
+      <p>Selecione a skill no chat da IDE e envie uma ideia ou um documento. Ela abre um protótipo navegável com os requisitos e fluxos lado a lado.</p>
+    </header>
+
+    <div class="columns">
+      <div class="content">
+        <section id="instalacao" aria-labelledby="install-title">
+          <div class="section-bar">
+            <h2 id="install-title"><svg class="icon"><use href="#i-terminal"/></svg>Instalação</h2>
+            <div class="switch" role="tablist" aria-label="Como instalar">
+              <button id="tab-comando" role="tab" aria-selected="true" aria-controls="install-panel" type="button">Comando</button>
+              <button id="tab-prompt" role="tab" aria-selected="false" aria-controls="install-panel" tabindex="-1" type="button">Prompt</button>
+            </div>
+          </div>
+          <div id="install-panel" role="tabpanel" aria-labelledby="tab-comando" tabindex="0">
+            <div class="snippet">
+              <span id="prefix" aria-hidden="true">$</span>
+              <code id="install-text">npx skills@1.9.0 add https://github.com/DaniloAmaralUX/pitang-prototype-viewer/tree/requisitos-v1.0.0-rc.3/skills/requisitos-e-prototipos --skill requisitos-e-prototipos</code>
+              <button type="button" class="copy" id="copy-install" aria-label="Copiar comando de instalação" title="Copiar comando de instalação">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+              </button>
+            </div>
+            <p class="hint" id="install-hint">Execute na pasta do projeto com acesso ao repositório privado.</p>
+          </div>
+          <span class="sr-only" role="status" id="copy-status"></span>
+        </section>
+
+        <section id="viewer" aria-labelledby="viewer-title">
+          <div class="section-bar">
+            <h2 id="viewer-title"><svg class="icon"><use href="#i-window"/></svg>Prototype Viewer</h2>
+            <a class="quiet-link" href="arquivos/almoco-na-empresa.html" download>Baixar HTML <svg class="icon"><use href="#i-download"/></svg></a>
+          </div>
+          <div class="demo">
+            <div class="demo-info">
+              <span class="demo-label">Protótipo de exemplo</span>
+              <h3>Almoço na empresa</h3>
+              <p>Escolha um horário de retirada, confirme o pedido e confira os requisitos desse fluxo.</p>
+              <a class="primary" id="open-viewer" href="arquivos/almoco-na-empresa.html?flow=pedir&amp;v=1&amp;device=ios"><svg class="icon"><use href="#i-play"/></svg>Experimentar no viewer</a>
+            </div>
+            <div class="demo-art" aria-hidden="true">
+              <img src="visual/previa-almoco.png" alt="" width="320" height="690" decoding="async">
+            </div>
+          </div>
+        </section>
+
+        <section id="documentacao" aria-labelledby="docs-title">
+          <div class="section-bar"><h2 id="docs-title"><svg class="icon"><use href="#i-file"/></svg>SKILL.md</h2></div>
+          <div id="skill-reader"></div>
+          <noscript>Baixe o ZIP da skill para ler o arquivo SKILL.md e seus guias.</noscript>
+        </section>
+      </div>
+
+      <aside aria-labelledby="details-title">
+        <h2 class="aside-title" id="details-title">Detalhes da skill</h2>
+        <dl>
+          <dt>Versão</dt><dd><span class="version"><span aria-hidden="true"></span>1.0.0-rc.3</span><small>Release candidata</small></dd>
+          <dt>Repositório privado</dt><dd><a class="repo-link" href="https://github.com/DaniloAmaralUX/pitang-prototype-viewer" target="_blank" rel="noopener">DaniloAmaralUX/<wbr>pitang-prototype-viewer <svg class="icon"><use href="#i-external"/></svg></a></dd>
+          <dt>Para gerar um protótipo</dt><dd>Python 3.10+ e Node.js 18+</dd>
+          <dt>Para visualizar</dt><dd>Navegador com JavaScript</dd>
+        </dl>
+        <div class="package">
+          <a class="download" href="arquivos/requisitos-e-prototipos.zip" download><svg class="icon"><use href="#i-download"/></svg>Baixar skill em ZIP</a>
+          <p>Inclui o viewer, os scripts e os guias.</p>
+          <details><summary>Instalar o ZIP no Codex</summary><p>Na raiz do projeto, extraia a pasta <code>requisitos-e-prototipos</code> dentro de <code>.agents/skills/</code>. Abra uma nova conversa na IDE e selecione a skill.</p></details>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <dialog id="viewer-dialog" aria-labelledby="dialog-title">
+    <div class="viewer-tools">
+      <h2 id="dialog-title">Almoço na empresa</h2>
+      <a class="quiet-link" href="arquivos/almoco-na-empresa.html?flow=pedir&amp;v=1&amp;device=ios" target="_blank" rel="noopener">Abrir em outra aba <svg class="icon"><use href="#i-external"/></svg></a>
+      <button class="close" id="close-viewer" type="button" aria-label="Fechar viewer" title="Fechar viewer" autofocus><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <iframe id="viewer-frame" title="Prototype Viewer interativo de Almoço na empresa"></iframe>
+  </dialog>
+</body>
+</html>
